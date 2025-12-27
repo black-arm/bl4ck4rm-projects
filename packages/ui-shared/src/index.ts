@@ -1,2 +1,2 @@
-
-export * from './components/button.tsx';
+import '@/globals.css';
+export * from './components/ui/button';
