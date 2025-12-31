@@ -24,7 +24,25 @@ export default defineConfig({
       formats: ['es'],
       fileName: 'index',
     },
-    cssCodeSplit: false
+    cssCodeSplit: false,
+    rollupOptions: {
+      external: [
+        'react',
+        'react-dom',
+        //'react/jsx-runtime',
+        '@radix-ui/react-navigation-menu',
+        '@radix-ui/react-slot',
+        'lucide-react' 
+      ],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
+    },
+    // sourcemap: true,
+    // minify: false
   },
   resolve: {
     alias: {
