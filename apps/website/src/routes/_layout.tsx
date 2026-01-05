@@ -19,6 +19,8 @@ function RouteComponent() {
     <Hero fullname="Antonio Basile" 
       photoUrl="https://avatars.githubusercontent.com/u/68558867?v=4" />
     <Navbar items={navbarItems} />
-    <Outlet />
+    <div className='mt-8'>
+      <Outlet />
+    </div>
   </div>
 }

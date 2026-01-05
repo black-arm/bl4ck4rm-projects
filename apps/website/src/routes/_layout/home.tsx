@@ -1,3 +1,4 @@
+import AboutMe from '@/modules/home/components/aboutMe/aboutMe'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_layout/home')({
@@ -5,7 +6,5 @@ export const Route = createFileRoute('/_layout/home')({
 })
 
 function RouteComponent() {
-  return <div>
-    Homepage
-  </div>
+  return  <AboutMe />
 }
