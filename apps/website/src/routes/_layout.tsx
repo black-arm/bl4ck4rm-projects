@@ -18,10 +18,10 @@ function RouteComponent() {
   return <div className='px-60 pt-8 min-h-screen' >
     <Hero fullname="Antonio Basile" 
       photoUrl="https://avatars.githubusercontent.com/u/68558867?v=4" 
-      jobDescription="Software Engineer at PNO Innovations"
+      jobDescription="Software Engineer in Italy"
     />
     <Navbar items={navbarItems} />
-    <div className='mt-8'>
+    <div className='mt-8 px-72'>
       <Outlet />
     </div>
   </div>

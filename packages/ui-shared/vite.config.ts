@@ -1,5 +1,5 @@
 import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'vite'
+import { defineConfig, type UserConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
@@ -44,9 +44,14 @@ export default defineConfig({
     // sourcemap: true,
     // minify: false
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './tests/setup.tsx',
+  },
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
     },
   },
-})
+} as UserConfig)
