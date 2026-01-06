@@ -11,13 +11,15 @@ function RouteComponent() {
   const navbarItems: NavbarItem[] = [
     { type: 'link', label: 'Home', to: '/home' },
     { type: 'link', label: 'Blog', to: '/blog' },
-    { type: 'anchor', label: 'LinkedIn', href: 'https://linkedin.com' },
-    { type: 'anchor', label: 'GitHub', href: 'https://github.com' },
+    { type: 'anchor', label: 'LinkedIn', href: 'https://www.linkedin.com/in/antonio-basile-46a279114/' },
+    { type: 'anchor', label: 'GitHub', href: 'https://github.com/black-arm' },
   ];
 
   return <div className='px-60 pt-8 min-h-screen' >
     <Hero fullname="Antonio Basile" 
-      photoUrl="https://avatars.githubusercontent.com/u/68558867?v=4" />
+      photoUrl="https://avatars.githubusercontent.com/u/68558867?v=4" 
+      jobDescription="Software Engineer at PNO Innovations"
+    />
     <Navbar items={navbarItems} />
     <div className='mt-8'>
       <Outlet />
