@@ -1,3 +1,6 @@
 [build]
-  command = "npm ci && npm run build"
+  command = "pnpm install && pnpm build"
   publish = "dist/client"
+
+[build.environment]
+  PNPM_VERSION = "10.20.0"
