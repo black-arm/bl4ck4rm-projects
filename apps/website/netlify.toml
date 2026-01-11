@@ -1,5 +1,5 @@
 [build]
-  command = "pnpm install && pnpm --filter website build"
+  command = "pnpm --filter website build"
   publish = "dist/client"
 
 [build.environment]
