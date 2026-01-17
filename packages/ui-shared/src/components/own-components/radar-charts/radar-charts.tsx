@@ -17,14 +17,15 @@ export type RadarChartProps = {
   chartConfig: ChartConfig;
   dataKeyLabel: string;
   dataKeyValue: string;
+  chartClassName?: string;
 }
 
-export function RadarCharts({ data, chartConfig, dataKeyLabel, dataKeyValue }: RadarChartProps) {
+export function RadarCharts({ data, chartConfig, dataKeyLabel, dataKeyValue, chartClassName }: RadarChartProps) {
   return (
     <div data-testid="radar-chart">
       <ChartContainer
         config={chartConfig}
-        className={"mx-auto aspect-square max-h-96 w-full"}
+        className={chartClassName ?? "mx-auto aspect-square max-h-96 w-full"}
       >  
         <RadarChart data={data}>
           <ChartTooltip cursor={false} content={<ChartTooltipContent />} />

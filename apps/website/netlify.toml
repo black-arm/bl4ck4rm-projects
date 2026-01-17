@@ -1,6 +1,6 @@
 [build]
   command = "pnpm --filter @bl4ck4rm-projects/ui-shared build && pnpm --filter @bl4ck4rm-projects/website build"
-  publish = "dist/client"
+  publish = "apps/website/dist/client"
 
 [build.environment]
   PNPM_VERSION = "10.20.0"

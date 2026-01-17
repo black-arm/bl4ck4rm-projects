@@ -1,5 +1,4 @@
 import { BlogsListContainer } from '@/modules/blog/container/blogs-list-container'
-import { Button } from '@bl4ck4rm-projects/ui-shared'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_layout/blog')({
@@ -8,7 +7,7 @@ export const Route = createFileRoute('/_layout/blog')({
 
 function RouteComponent() {
 
-  return <div>
+  return <div className='p-4 mb-8'>
     <BlogsListContainer />
   </div>
 }
