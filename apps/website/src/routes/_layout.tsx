@@ -19,7 +19,7 @@ function RouteComponent() {
   const queryClient = new QueryClient()
 
 
-  return <div className='px-60 pt-8 min-h-screen' >
+  return <div className='px-4 sm:px-8 lg:px-40 xl:px-60 pt-8 min-h-screen' >
     <Hero fullname="Antonio Basile" 
       photoUrl="https://avatars.githubusercontent.com/u/68558867?v=4" 
       jobDescription="Software Engineer in Italy"

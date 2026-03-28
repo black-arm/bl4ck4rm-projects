@@ -41,24 +41,24 @@ function RouteComponent() {
 
   return <>
     <AboutMe />
-    <div className='flex flex-col mt-8'>
-      <h2 className='text-3xl font-bold mb-6'>Technical Skills Overview</h2>
-      <p className='mb-8 text-muted-foreground max-w-2xl'>
+    <div className='flex flex-col mt-6 md:mt-8'>
+      <h2 className='text-2xl md:text-3xl font-bold mb-4 md:mb-6'>Technical Skills Overview</h2>
+      <p className='mb-6 md:mb-8 text-sm md:text-base text-muted-foreground max-w-2xl'>
         A bit of my technical knowledge that I have learned over the years. 😎
       </p>
-      <div className='flex justify-center flex-row'>
+      <div className='flex justify-center flex-col md:flex-row gap-4 md:gap-0'>
         <RadarCharts data={programmingLanguages} 
         chartConfig={chartConfig} 
         dataKeyLabel="skill" 
         dataKeyValue="value"
-        chartClassName='w-96'/>
+        chartClassName='w-full md:w-96'/>
       <RadarCharts data={frameworks} 
         chartConfig={chartConfigFrameworks} 
         dataKeyLabel="skill" 
         dataKeyValue="value"
-        chartClassName="w-96" />
+        chartClassName="w-full md:w-96" />
       </div>
-        <p className='mb-8 text-muted-foreground max-w-2xl'>
+        <p className='mb-6 md:mb-8 text-sm md:text-base text-muted-foreground max-w-2xl'>
           If you want to read a couple of posts I wrote, 
             <Link className='underline text-accent-foreground' to="/blog">click here</Link>;
         </p>
