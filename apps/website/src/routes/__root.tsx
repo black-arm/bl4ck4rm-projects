@@ -36,7 +36,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        {(import.meta.env.DEV || window.location.hostname === 'localhost') && (
+        {/* {(import.meta.env.DEV || window.location.hostname === 'localhost') && (
           <TanStackDevtools
             config={{
               position: 'bottom-right',
@@ -48,7 +48,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               },
             ]}
           />
-        )}
+        )} */}
         <Scripts />
       </body>
     </html>
