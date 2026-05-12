@@ -4,7 +4,7 @@ import AboutMe from '@/modules/home/components/aboutMe/aboutMe'
 import { ChartConfig, RadarCharts } from '@bl4ck4rm-projects/ui-shared'
 import { createFileRoute, Link } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/_layout/home')({
+export const Route = createFileRoute('/_layout/(home)/home')({
   component: RouteComponent,
 })
 

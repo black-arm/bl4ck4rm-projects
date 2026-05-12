@@ -2,4 +2,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter:wght@400&family=Fira+Code:wght@300;400;500;600;700&display=swap');
 @import '@bl4ck4rm-projects/ui-shared/globals.css';
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @source "../";

@@ -8,11 +8,11 @@
     "website:dev": "pnpm --filter website dev",
     "website:test": "pnpm --filter website test",
     "ui-shared:build": "pnpm --filter ui-shared build",
-    "ui-shared:test": "pnpm --filter ui-shared test", 
+    "ui-shared:test": "pnpm --filter ui-shared test",
     "ui-shared:test-ui": "pnpm --filter ui-shared test:ui"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.20.0"
+  "packageManager": "pnpm@11.1.1"
 }

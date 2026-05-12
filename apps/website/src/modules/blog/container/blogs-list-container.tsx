@@ -1,5 +1,6 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@bl4ck4rm-projects/ui-shared";
 import { useArticlesByUsernameQuery } from "../domain/articles-query";
+import { Link } from "@tanstack/react-router";
 
 export function BlogsListContainer(){
 
@@ -11,9 +12,9 @@ export function BlogsListContainer(){
             <Card key={article.id} className="mb-6 hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
                     <CardTitle>
-                        <a href={article.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                        <Link to="/blog/$blogId" params={{ blogId: article.id.toString() }} className="text-primary hover:underline">
                             {article.title}
-                        </a>
+                        </Link>
                     </CardTitle>
                     <CardDescription>
                         {new Date(article.published_at).toLocaleDateString()}

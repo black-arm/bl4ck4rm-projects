@@ -11,8 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LayoutRouteImport } from './routes/_layout'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as LayoutHomeRouteImport } from './routes/_layout/home'
-import { Route as LayoutBlogRouteImport } from './routes/_layout/blog'
+import { Route as LayouthomeHomeRouteImport } from './routes/_layout/(home)/home'
+import { Route as LayoutblogBlogRouteImport } from './routes/_layout/(blog)/blog'
+import { Route as LayoutblogBlogBlogIdRouteImport } from './routes/_layout/(blog)/blog_.$blogId'
 
 const LayoutRoute = LayoutRouteImport.update({
   id: '/_layout',
@@ -23,40 +24,54 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LayoutHomeRoute = LayoutHomeRouteImport.update({
-  id: '/home',
+const LayouthomeHomeRoute = LayouthomeHomeRouteImport.update({
+  id: '/(home)/home',
   path: '/home',
   getParentRoute: () => LayoutRoute,
 } as any)
-const LayoutBlogRoute = LayoutBlogRouteImport.update({
-  id: '/blog',
+const LayoutblogBlogRoute = LayoutblogBlogRouteImport.update({
+  id: '/(blog)/blog',
   path: '/blog',
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutblogBlogBlogIdRoute = LayoutblogBlogBlogIdRouteImport.update({
+  id: '/(blog)/blog_/$blogId',
+  path: '/blog/$blogId',
   getParentRoute: () => LayoutRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/blog': typeof LayoutBlogRoute
-  '/home': typeof LayoutHomeRoute
+  '/blog': typeof LayoutblogBlogRoute
+  '/home': typeof LayouthomeHomeRoute
+  '/blog/$blogId': typeof LayoutblogBlogBlogIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/blog': typeof LayoutBlogRoute
-  '/home': typeof LayoutHomeRoute
+  '/blog': typeof LayoutblogBlogRoute
+  '/home': typeof LayouthomeHomeRoute
+  '/blog/$blogId': typeof LayoutblogBlogBlogIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_layout': typeof LayoutRouteWithChildren
-  '/_layout/blog': typeof LayoutBlogRoute
-  '/_layout/home': typeof LayoutHomeRoute
+  '/_layout/(blog)/blog': typeof LayoutblogBlogRoute
+  '/_layout/(home)/home': typeof LayouthomeHomeRoute
+  '/_layout/(blog)/blog_/$blogId': typeof LayoutblogBlogBlogIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/blog' | '/home'
+  fullPaths: '/' | '/blog' | '/home' | '/blog/$blogId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blog' | '/home'
-  id: '__root__' | '/' | '/_layout' | '/_layout/blog' | '/_layout/home'
+  to: '/' | '/blog' | '/home' | '/blog/$blogId'
+  id:
+    | '__root__'
+    | '/'
+    | '/_layout'
+    | '/_layout/(blog)/blog'
+    | '/_layout/(home)/home'
+    | '/_layout/(blog)/blog_/$blogId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -80,31 +95,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_layout/home': {
-      id: '/_layout/home'
+    '/_layout/(home)/home': {
+      id: '/_layout/(home)/home'
       path: '/home'
       fullPath: '/home'
-      preLoaderRoute: typeof LayoutHomeRouteImport
+      preLoaderRoute: typeof LayouthomeHomeRouteImport
       parentRoute: typeof LayoutRoute
     }
-    '/_layout/blog': {
-      id: '/_layout/blog'
+    '/_layout/(blog)/blog': {
+      id: '/_layout/(blog)/blog'
       path: '/blog'
       fullPath: '/blog'
-      preLoaderRoute: typeof LayoutBlogRouteImport
+      preLoaderRoute: typeof LayoutblogBlogRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/(blog)/blog_/$blogId': {
+      id: '/_layout/(blog)/blog_/$blogId'
+      path: '/blog/$blogId'
+      fullPath: '/blog/$blogId'
+      preLoaderRoute: typeof LayoutblogBlogBlogIdRouteImport
       parentRoute: typeof LayoutRoute
     }
   }
 }
 
 interface LayoutRouteChildren {
-  LayoutBlogRoute: typeof LayoutBlogRoute
-  LayoutHomeRoute: typeof LayoutHomeRoute
+  LayoutblogBlogRoute: typeof LayoutblogBlogRoute
+  LayouthomeHomeRoute: typeof LayouthomeHomeRoute
+  LayoutblogBlogBlogIdRoute: typeof LayoutblogBlogBlogIdRoute
 }
 
 const LayoutRouteChildren: LayoutRouteChildren = {
-  LayoutBlogRoute: LayoutBlogRoute,
-  LayoutHomeRoute: LayoutHomeRoute,
+  LayoutblogBlogRoute: LayoutblogBlogRoute,
+  LayouthomeHomeRoute: LayouthomeHomeRoute,
+  LayoutblogBlogBlogIdRoute: LayoutblogBlogBlogIdRoute,
 }
 
 const LayoutRouteWithChildren =

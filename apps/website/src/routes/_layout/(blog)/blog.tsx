@@ -1,7 +1,7 @@
 import { BlogsListContainer } from '@/modules/blog/container/blogs-list-container'
 import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/_layout/blog')({
+export const Route = createFileRoute('/_layout/(blog)/blog')({
   component: RouteComponent,
 })
 
