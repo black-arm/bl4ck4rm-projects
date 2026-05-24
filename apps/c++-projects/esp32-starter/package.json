@@ -1,7 +1,7 @@
 {
-  "name": "calculator",
+  "name": "esp32-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a start project for esp32",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,5 +9,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.20.0"
+  "type": "module"
 }
