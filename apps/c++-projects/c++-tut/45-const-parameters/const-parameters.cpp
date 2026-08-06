@@ -4,8 +4,8 @@ void printInfo(const std::string &name, const int &age);
 
 int main() {
 
-    std::string name = "Antonio";
-    int age = 33;
+    const std::string name = "Antonio";
+    const int age = 33;
 
     printInfo(name, age);
 
